@@ -10,9 +10,14 @@ public class Filmes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    //long pq o professor declared como bigint
     private Long id;
     private String nomeFilme;
+
+    //puxando a classe Genero e não o Id
+    @ManyToOne
+    @JoinColumn(name="idgenero")
+    private Genero genero;
 
     public Long getId() {
         return id;
