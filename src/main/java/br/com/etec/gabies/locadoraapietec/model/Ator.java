@@ -1,7 +1,8 @@
 package br.com.etec.gabies.locadoraapietec.model;
 
-
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,9 @@ public class Ator {
     //integer pq o professor declarou como int
     private Integer id;
     private String nome;
+
+    @OneToMany(mappedBy = "ator")
+    private List<Filmes> filmesator = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -29,6 +33,14 @@ public class Ator {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Filmes> getFilmesator() {
+        return filmesator;
+    }
+
+    public void setFilmesator(List<Filmes> filmesator) {
+        this.filmesator = filmesator;
     }
 
     @Override

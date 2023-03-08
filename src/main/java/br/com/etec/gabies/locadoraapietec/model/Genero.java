@@ -1,6 +1,8 @@
 package br.com.etec.gabies.locadoraapietec.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +15,9 @@ public class Genero {
 
     private Integer id;
     private String descricao;
+
+    @OneToMany(mappedBy = "genero")
+    private List<Filmes> filmesgenero = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -28,6 +33,14 @@ public class Genero {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public List<Filmes> getFilmesgenero() {
+        return filmesgenero;
+    }
+
+    public void setFilmesgenero(List<Filmes> filmesgenero) {
+        this.filmesgenero = filmesgenero;
     }
 
     @Override

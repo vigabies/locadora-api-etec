@@ -19,6 +19,12 @@ public class Filmes {
     @JoinColumn(name="idgenero")
     private Genero genero;
 
+
+    //como temos que fazer mais uma relação, é o mesmo processo
+    @ManyToOne
+    @JoinColumn(name = "idator")
+    private Ator ator;
+
     public Long getId() {
         return id;
     }
@@ -33,6 +39,22 @@ public class Filmes {
 
     public void setNomeFilme(String nomeFilme) {
         this.nomeFilme = nomeFilme;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public Ator getAtor() {
+        return ator;
+    }
+
+    public void setAtor(Ator ator) {
+        this.ator = ator;
     }
 
     @Override
