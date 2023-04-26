@@ -1,5 +1,7 @@
 package br.com.etec.gabies.locadoraapietec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Genero {
     private Integer id;
     private String descricao;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "genero")
     private List<Filmes> filmesgenero = new ArrayList<>();
 

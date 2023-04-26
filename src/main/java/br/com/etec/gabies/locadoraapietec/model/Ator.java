@@ -1,5 +1,7 @@
 package br.com.etec.gabies.locadoraapietec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,9 @@ public class Ator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //integer pq o professor declarou como int
     private Integer id;
-    private String nome;
+    private String nomeator;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "ator")
     private List<Filmes> filmesator = new ArrayList<>();
 
@@ -27,12 +30,12 @@ public class Ator {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeator() {
+        return nomeator;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeator(String nomeator) {
+        this.nomeator = nomeator;
     }
 
     public List<Filmes> getFilmesator() {

@@ -1,5 +1,7 @@
 package br.com.etec.gabies.locadoraapietec.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,13 +14,12 @@ public class Filmes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //long pq o professor declared como bigint
     private Long id;
-    private String nomeFilme;
+    private String nomefilme;
 
     //puxando a classe Genero e não o Id
     @ManyToOne
     @JoinColumn(name="idgenero")
     private Genero genero;
-
 
     //como temos que fazer mais uma relação, é o mesmo processo
     @ManyToOne
@@ -33,12 +34,12 @@ public class Filmes {
         this.id = id;
     }
 
-    public String getNomeFilme() {
-        return nomeFilme;
+    public String getNomefilme() {
+        return nomefilme;
     }
 
-    public void setNomeFilme(String nomeFilme) {
-        this.nomeFilme = nomeFilme;
+    public void setNomefilme(String nomefilme) {
+        this.nomefilme = nomefilme;
     }
 
     public Genero getGenero() {
