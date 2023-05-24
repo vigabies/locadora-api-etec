@@ -7,5 +7,5 @@ import org.springframework.data.domain.Pageable;
 
 public interface AtorRepositoryQuery {
 
-    public Page<Ator> filtrar(AtorFilter atorFilter, Pageable pageable)
+    public Page<Ator> filtrar(AtorFilter atorFilter, Pageable pageable);
 }

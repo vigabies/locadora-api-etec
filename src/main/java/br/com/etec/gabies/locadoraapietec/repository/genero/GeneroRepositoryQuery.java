@@ -8,5 +8,5 @@ import org.springframework.data.domain.Pageable;
 public interface GeneroRepositoryQuery {
 
 
-    public Page<Genero> filtrar(GeneroFilter generoFilter, Pageable pageable)
+    public Page<Genero> filtrar(GeneroFilter generoFilter, Pageable pageable);
 }
