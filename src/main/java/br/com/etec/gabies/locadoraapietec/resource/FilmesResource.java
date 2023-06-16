@@ -3,6 +3,7 @@ package br.com.etec.gabies.locadoraapietec.resource;
 import br.com.etec.gabies.locadoraapietec.model.Filmes;
 import br.com.etec.gabies.locadoraapietec.repository.FilmesRepository;
 import br.com.etec.gabies.locadoraapietec.repository.filter.FilmesFilter;
+import br.com.etec.gabies.locadoraapietec.repository.projections.ResumoFilmes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,7 +26,8 @@ public class FilmesResource {
         return filmesRepository.findAll(Sort.by("nomefilme").ascending());
     }
 
-    public Page<Filmes> pesquisar(FilmesFilter filmesFilter, Pageable pageable) {
+    @GetMapping()
+    public Page<ResumoFilmes> pesquisar(FilmesFilter filmesFilter, Pageable pageable) {
         return filmesRepository.filtrar(filmesFilter, pageable);
     }
 
