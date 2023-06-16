@@ -51,7 +51,7 @@ public class GeneroRepositoryImpl implements GeneroRepositoryQuery {
         return manager.createQuery(criteria).getSingleResult();
     }
 
-    private void adicionarRestricoesDePaginacao(TypedQuery<Genero> query, Pageable pageable) {
+    private void adicionarRestricoesDePaginacao(TypedQuery<?> query, Pageable pageable) {
         int pageAtual = pageable.getPageNumber();
         int totalRegistroPage = pageable.getPageSize();
         int primeiroRegistroPage = pageAtual * totalRegistroPage;
